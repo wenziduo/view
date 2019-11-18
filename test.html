@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<style>
+  .box{
+    width: 200px;
+    height: 400px;
+    position: relative;
+    margin: 30px auto;
+    transform: all 0.5s;
+
+}
+@keyframes moves{
+    from{box-shadow: 0 0 0 transparent;}
+    30%{box-shadow: 0 0 50px rgb(236, 57, 57);}
+    60%{box-shadow: 0 0 80px rgb(241, 97, 97);}
+}
+.box>div{
+    animation: moves 1s infinite;
+    transition-delay: 1s;
+}
+.box_1{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: red;
+    border-bottom: 0;
+
+}
+div:nth-child(2){
+    position: absolute;
+    top: 0;
+    left:80px;
+}
+.box_2{
+    width: 100px;
+    height: 130px;
+    background: red;
+    transform: rotateZ(57deg);
+
+}
+.box>div:nth-child(3){
+    position: absolute;
+    top: 2px;
+    right: 31px;
+    background-color: red;
+    border-radius: 50% 50% 0% 0;
+    box-shadow: 0 0 0 transparent !important;
+}
+.box>div:last-child{
+    position: absolute;
+    top: 4px;
+    left: 12px;
+    transform: rotateZ(122deg);
+    border-radius: 0 0% 50% 50%;
+}
+/* .box:hover>div{
+    box-shadow: 0 0 10px rgb(241, 97, 97);
+} */
+</style>
+</head>
+<body>
+    <div class="box">
+        <div class="box_1"></div>
+        <div class="box_1"></div>
+        <div class="box_2"></div>
+        <div class="box_2"></div>
+    </div>
+  <script>
+     function print() {
+       console.log(this.name)
+     }
+     Function.prototype.newBind = function(obj) {
+      const context = this
+      return function() {context.call(obj)}
+     }
+     var obj = {
+       name: "inner"
+     }
+     const newPrint = print.newBind(obj)
+     newPrint()
+  </script>
+</body>
+</html>
