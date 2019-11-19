@@ -5,8 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    .container {
+      width: 1000px;
+      display: flex;
+      height: 100px;
+      background: black;
+    }
+    .box1 {
+      width: 200px;
+      background: pink;
+      height: 100px;
+      flex-grow: 1;
+    }
+    .box2 {
+      width: 300px;
+      background: green;
+      height: 100px;
+    }
+    .box3 {
+      width: 300px;
+      background: yellow;
+      height: 100px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </div>
   <script>
     const udateChildren = (nextNestedChildrenElements, trascation, context) => {
       updateDepth ++;
