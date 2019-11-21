@@ -13,7 +13,7 @@
 3. 虽然我们在组件上定义了 key 值，但是在其子组件中，我们并没有办法拿到 key 值，因为 key 值仅仅是给 react 内部使用的。如果我们需要使用到 key 值，可通过其他方式传入，比如将 key 值赋值给 id 等。
 
 ### react 如何渲染大数据量的列表
-
+requestAnimationFrame（原生html）
 ### react 的哪个生命周期里可以调接口？
 
 ### Rudux 解决了啥问题
